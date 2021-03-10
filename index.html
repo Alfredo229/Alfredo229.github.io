@@ -1,43 +1,50 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Website navigation page</title>
-</head>
+<meta charset="UTF-8"> 
+<title>My Website About Rune Divination</title>
+<script>
 
-<body>
-<h1>This page is only meant for search engines or people with difficulty with the javascript loading the frame</h1>
-<h2>This is intended to fill my empty bio spaces. It is far from something serious. Some of the links are plain dead. If anthing, the "manual rune reading" might be worth a look.</h2>
-<a href="learn.html">Learn about the runes</a><br>
-<a href="map.html">Simple Rune Map</a><br>
-<a href="single rune.html">Manual runic reading with symbols or pictures</a><br>
-<a href="rune_match_limited.html">Limited Rune Coincidence</a><br>
-<a href="rune feed.html">Live runic reading with symbols or pictures</a><br>
-<a href="flipall.html">Original Toss All Runes</a><br>
+function fitSize(){
+ document.getElementById("Navigation").style.height = (window.innerHeight-110) + "px";
+ document.getElementById("contentbox").style.height = (window.innerHeight-110) + "px";
+ document.getElementById("contentbox").style.width = (window.innerWidth-290) + "px";
+}
+
+function LoadPage(targetname){
+ document.getElementById("contentbox").src = targetname + '.html';
+}
+
+</script>
+</head>
+<body style="background-image:url(background.jpg);background-repeat: repeat-y; background-position: right top" onLoad="fitSize()" onResize="fitSize()">
+<div style="text-align:center;height:80px;width:100%;">
+<h1>My Website About Rune Divination</h1>
+</div>
+
+<div id="Navigation" style="height:100%;width:250px;float:left;overflow:auto">
+<b>Runes</b><br>
+<a href="#" onClick="javascript:LoadPage('learn')">Learn about the runes</a><br>
+<a href="#" onClick="javascript:LoadPage('Map')">Rune Picture List</a><br>
+<a href="#" onClick="javascript:LoadPage('single rune')">Rune reading with symbols or pictures</a><br>
+<a href="#" onClick="javascript:LoadPage('rune feed')">Live rune reading (now with pictures)</a><br>
+<a href="#" onClick="javascript:LoadPage('flipall')">Toss all</a><br>
+<b>Numbers</b><br>
+<a href="#" onClick="javascript:LoadPage('match')">Coincidence scrubber</a><br>
+<a href="#" onClick="javascript:LoadPage('find_primes')">Prime number finder</a><br>
+<a href="#" onClick="javascript:LoadPage('factorise')">Factor number finder</a><br>
+<a href="#" onClick="javascript:LoadPage('cones')">Cones, i forget why</a><br>
 <br>
-<a href="thegame.html">The game</a><br>
-<br>
-<a href="match.html">Coincidence scrubber</a><br>
-<a href="find_primes.html">Prime number finder</a><br>
-<a href="factorise.html">Factor number finder</a><br>
-<a href="count.html">Multiple Layer Relativity</a><br>
-<br>
-<a href="legacy radio ratio.html">Legacy Radio Triangles</a><br>
-<a href="radio ratio.html">Favorite Triangle Calculator</a><br>
-<a href="standard radio ratio.html">Triangle calculator</a><br>
-<a href="radio middle.html">Water Triangle Calculator</a><br>
-<br>
-<a href="concentric color.html">Concentric color</a><br>
-<br>
-<a href="cones.html">Relativity Cones</a><br>
-<br>
-<a href="US frequencies/Paris ratio.html">Paris ratio</a><br>
-<a href="US frequencies/Hawaii ratio.html">Hawaii ratio</a><br>
-<a href="US frequencies/Miami ratio.html">Miami ratio</a><br>
-<a href="US frequencies/NYC ratio.html">NYC ratio</a><br>
-<a href="US frequencies/Ottawa ratio.html">Ottawa ratio</a><br>
-<a href="US frequencies/Washington dc ratio.html">Washington dc ratio</a><br>
-<a href="US frequencies/Sacramento ratio.html">Sacramento ratio</a><br>
-<a href="US frequencies/New Dheli ratio.html">New Dheli ratio</a><br>
-<br>
-<a href="Trump/Donald Trump - Wikipedia.html">President Donald Trump Background</a><br>
+<a href="#" onClick="javascript:LoadPage('count')">Multiple Layer Relativity</a><br>
+<a href="#" onClick="javascript:LoadPage('radio%20ratio')">Favorite Radio Triangles</a><br>
+<a href="#" onClick="javascript:LoadPage('legacy%20radio%20ratio')">Legacy Radio Triangles</a><br>
+<b>Other</b><br>
+<a href="#" onClick="javascript:LoadPage('thegame')">The game</a><br>
+<a href="#" onClick="javascript:LoadPage('concentric color')">Concentric Color</a><br>
+</div>
+<div style="float:left;height:100px;width:100px">
+<iframe frameborder="0" id="contentbox" src="First Page.html">
+</iframe>
+</div>
 </body>
 </html>
