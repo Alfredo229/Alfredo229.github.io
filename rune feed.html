@@ -18,10 +18,18 @@
 
 <p>This is a live rune reading. It runs cycles which you can customize and looks for a match. You can click an image for a quote from the original texts about that rune. It would be easier to learn on the manual rune reading.</p>
 
+<form>
+<select id="constant" onblur="setValues()">
+ <option value = "Me">Mercury/Venus</option>
+ <option value = "V">Venus/Earth</option>
+ <option value = "Ma">Mars/Earth</option>
+</select>
+</form>
+
 <table><form><tr>
 
 <td>Cycle A</td>
-<td><input id="field10" type="text" value="1217"></td>
+<td><input id="field10" type="text" value="1125"></td>
 
 <td>Value 1</td>
 <td><input id="field30" type="text" value="System Used"></td>
@@ -29,7 +37,7 @@
 </tr><tr>
 
 <td>Cycle B</td>
-<td><input id="field20" type="text" value="2290"></td>
+<td><input id="field20" type="text" value="1825"></td>
 
 <td>Value 2</td>
 <td><input id="field40" type="text" value="System Used"></td>
@@ -190,6 +198,24 @@ function loadImages(){
   rune[i] = new Image();
   rune[i].src = myPath + myNames[i]+".jpg";
 }}
+
+function setValues(){
+ MyConstant = document.getElementById("constant").value;
+ switch(MyConstant){
+  case "Me":
+   document.getElementById("field10").value = 440;
+   document.getElementById("field20").value = 1125;
+   break;
+  case "V":
+   document.getElementById("field10").value = 1125;
+   document.getElementById("field20").value = 1825;
+   break;
+  case "Ma":
+   document.getElementById("field10").value = 1095;
+   document.getElementById("field20").value = 2061;
+   break;
+ }
+}
 
 function initA(){
  if(running == 0){
