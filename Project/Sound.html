@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Chord generator</title>
+<script>
+
+ID = 0;
+pick = 0;
+myString ="";
+
+function Start()
+{
+ ID = setTimeout("Start()",666);
+ pick = Math.random() * 15;
+ pick = Math.floor(pick);
+ myString = pick + '.mp3';
+ document.getElementById("MySound").src = myString;
+ document.getElementById("MySound").play();
+}
+
+function Stop(){
+ clearTimeout(ID);
+}
+
+</script>
+<body>
+<div style="width:66%;margin:auto;text-align:center">
+<h2>This page will pull a number  0 to 15 and play the binary components in a relativity context</h1>
+<form id="MyForm">
+<input type="button" value="Start" onClick="Start()"></input>
+<input type="button" value="Stop" onClick="Stop()"></input>
+<br>
+<audio controls autoplay id="MySound">
+<source src="" type="audio/mpeg">
+</audio>
+</form>
+</div>
+</body>
+</html>
