@@ -6,6 +6,14 @@
 ID = 0;
 pick = 0;
 myString ="";
+mySoundLoad = new Array(16);
+
+function init(){
+ for(i=0;i<16;i++){
+  mySoundLoad[i] = new Audio();
+  mySoundLoad[i].src = i + '.mp3';
+ }
+}
 
 function Start()
 {
@@ -13,7 +21,7 @@ function Start()
  pick = Math.random() * 15;
  pick = Math.floor(pick);
  myString = pick + '.mp3';
- document.getElementById("MySound").src = myString;
+ document.getElementById("MySound").src = mySoundLoad[pick].src;
  document.getElementById("MySound").play();
 }
 
@@ -22,7 +30,7 @@ function Stop(){
 }
 
 </script>
-<body>
+<body onLoad = "init()">
 <div style="width:66%;margin:auto;text-align:center">
 <h2>This page will pull a number  0 to 15 and play the binary components in a relativity context</h1>
 <form id="MyForm">
