@@ -2,7 +2,6 @@
 <head>
 <title>Chord generator</title>
 <script>
-//Edit 01
 
 ID = 0;
 pick = 0;
@@ -13,12 +12,13 @@ function init(){
  for(i=0;i<16;i++){
   mySoundLoad[i] = new Audio();
   mySoundLoad[i].src = i + '.mp3';
+  mySoundLoad[i].load();
  }
 }
 
 function Start()
 {
- ID = setTimeout("Start()",1333);
+ ID = setTimeout("Start()",666);
  pick = Math.random() * 15;
  pick = Math.floor(pick);
  myString = pick + '.mp3';
