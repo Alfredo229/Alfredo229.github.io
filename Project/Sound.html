@@ -15,6 +15,8 @@ function init(){
   mySoundLoad[i] = new Audio();
   mySoundLoad[i].src = i + '.mp3';
   mySoundLoad[i].load();
+  mySoundLoad[i].duration=myDuration;
+  mySoundLoad[i].volume=0.5;
 //  mySoundLoad[i].preload = "auto";
  }
 // currentSound.src = mySoundLoad[0].src;
@@ -34,7 +36,6 @@ function Start()
 // document.getElementById("MySound").src = currentSound.src;
  pick = Math.random() * 15;
  pick = Math.floor(pick);
- mySoundLoad[pick].duration=myDuration;
  mySoundLoad[pick].play();
 // myString = pick + '.mp3';
 // currentSound.src = mySoundLoad[pick].src;
