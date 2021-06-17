@@ -7,23 +7,36 @@ ID = 0;
 pick = 0;
 myString ="";
 mySoundLoad = new Array(16);
+currentSound = new Audio();
 
 function init(){
  for(i=0;i<16;i++){
-  mySoundLoad[i] = new Audio();
+  mySoundLoad[i] = document.createElement("AUDIO");
   mySoundLoad[i].src = i + '.mp3';
   mySoundLoad[i].load();
+//  mySoundLoad[i].preload = "auto";
  }
+ currentSound.src = mySoundLoad[0].src;
+ pick = 0;
+// document.getElementById("MySound").preload = "auto";
+// document.getElementById("MySound").autoplay = true;
+// alert(document.getElementById("MySound").
 }
 
 function Start()
 {
- ID = setTimeout("Start()",666);
+ ID = setTimeout("Start()",2000);
+ document.getElementById("MySound").play();
+// document.getElementById("MySound").pause();
+// document.getElementById("MySound").src = currentSound.src;
+// document.getElementById("MySound").src = currentSound.src;
  pick = Math.random() * 15;
  pick = Math.floor(pick);
- myString = pick + '.mp3';
+// myString = pick + '.mp3';
+// currentSound.src = mySoundLoad[pick].src;
+// currentSound.load();
  document.getElementById("MySound").src = mySoundLoad[pick].src;
- document.getElementById("MySound").play();
+// document.getElementById("MySound").load();
 }
 
 function Stop(){
@@ -39,7 +52,23 @@ function Stop(){
 <input type="button" value="Stop" onClick="Stop()"></input>
 <br>
 <audio controls autoplay id="MySound">
-<source src="" type="audio/mpeg">
+<source src="0.mp3" type="audio/mpeg">
+<source src="1.mp3" type="audio/mpeg">
+<source src="2.mp3" type="audio/mpeg">
+<source src="3.mp3" type="audio/mpeg">
+<source src="4.mp3" type="audio/mpeg">
+<source src="5.mp3" type="audio/mpeg">
+<source src="6.mp3" type="audio/mpeg">
+<source src="7.mp3" type="audio/mpeg">
+<source src="8.mp3" type="audio/mpeg">
+<source src="9.mp3" type="audio/mpeg">
+<source src="10.mp3" type="audio/mpeg">
+<source src="11.mp3" type="audio/mpeg">
+<source src="12.mp3" type="audio/mpeg">
+<source src="13.mp3" type="audio/mpeg">
+<source src="14.mp3" type="audio/mpeg">
+<source src="15.mp3" type="audio/mpeg">
+<source src="16.mp3" type="audio/mpeg">
 </audio>
 </form>
 </div>
