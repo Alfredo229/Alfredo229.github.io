@@ -1,5 +1,31 @@
 function PickRune(MyString){
 
+name2 = new Array(
+"Frey: Honor",
+"Ur: Might",
+"Thorn: Reprimand",
+"Os: Reward",
+"Rad: Work",
+"Ken: Rest",
+"Gyfu: Problem",
+"Wyn: Solution",
+"Hagel: Amateur",
+"Nyd: Skilled",
+"Is: Defeat",
+"Jera: Victory",
+"Eoh: Pay Day",
+"Pethro: Shopping",
+"Eloh: Dangerous",
+"Sigel: Safe",
+"Tyr: Truth",
+"Birch: Fiction",
+"Eh: Concert",
+"Man: Birthday",
+"Lagu: Upset",
+"Ing: Controlled",
+"Daeg: Public",
+"Odal: Private");
+
  switch(MyString){
   case "S":
    myPath = "Runes\\";
@@ -47,13 +73,38 @@ function PickRune(MyString){
 
   case "P11":
    myPath = "Pictures10\\";
+name2 = new Array(
+"Frey: Honor",
+"Ur: Might",
+"Thorn: Reprimand",
+"Os: Reward",
+"Rad: Work",
+"Ken: Rest",
+"Gyfu: Problem",
+"Wyn: Solution",
+"Hagel: Amateur",
+"Nyd: Skilled",
+"Is: Defeat",
+"Jera: Victory",
+"Eoh: Pay Day",
+"Pethro: Shopping",
+"Eloh: Dangerous",
+"Sigel: Safe",
+"Tyr: Truth",
+"Birch: Fiction",
+"Eh: Concert",
+"Man: Birthday",
+"Lagu: Upset",
+"Ing: Controlled",
+"Daeg: Public",
+"Odal: Private");
    break;
 
   case "P12":
    myPath = "Pictures11\\";
-   name2 = new Array("Evaluation","Execution","Caution","Approval","Simple effort","Complex idea","Worried",
-"Peace","Out of control","Method","Sterile","Money","Valuable","Disposable","Toxic","Nutritious",
-"Procedure","Off duty","Work","Stopping","Responsability","Performing","Customer support","Self served");
+   name2 = new Array("Intellectual","Physical","Different","Coherent","Active","Passive","Complex","Simple",
+   "Disorganised","Controlled","Spontanious","Calculated","Selling","Buying","Defensive","Optimist",
+   "Loyal","Artist","Public Service","Private Task","Accident","Tradition","Job","Weekend");
    break;
 
   case "P13":
