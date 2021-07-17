@@ -103,7 +103,7 @@ name2 = new Array(
   case "P12":
    myPath = "Pictures11\\";
    name2 = new Array("Intellectual","Physical","Different","Coherent","Active","Passive","Complex","Simple",
-   "Disorganised","Controlled","Spontanious","Calculated","Selling","Buying","Defensive","Optimist",
+   "Disorganised","Controlled","Calculated","Spontanious","Selling","Buying","Defensive","Optimist",
    "Loyal","Artist","Public Service","Private Task","Accident","Tradition","Job","Weekend");
    break;
 
