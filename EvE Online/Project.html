@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>
+Minerals per asteroid with skill layer
+</title>
+<script>
+
+//sizes
+size = new Array(0.1,0.15,0.3,0.6,1.2,5,16,16);
+
+//Veldspar, Scordite, Pyroxers, Omber, Kernite, Geniss, Arkonor, Bistot
+mainYield = new Array(8);
+
+//Tritanium, Pyerite, Mexallon, Isogen, Nocxium, Zydrine, Magacyte, Morphite
+mainYield[0] = new Array(400,0,0,0,0,0,0,0);
+mainYield[1] = new Array(150,90,0,0,0,0,0,0);
+mainYield[2] = new Array(0,90,30,0,0,0,0,0);
+mainYield[3] = new Array(0,90,0,75,0,0,0,0);
+
+mainYield[4] = new Array(0,0,60,120,0,0,0,0);
+mainYield[5] = new Array(0,2000,1500,800,0,0,0,0);
+mainYield[6] = new Array(0,3200,1200,0,0,0,120,0);
+mainYield[7] = new Array(0,3200,1200,0,0,160,0,0);
+
+volume = 0;
+type = 0;
+
+factor = 0.5;
+results = new Array(8);
+
+function initAsteroid(){
+ type = Number(document.getElementById("type01").value);
+ volume = Number(document.getElementById("field01").value);
+
+ reprocess = Math.floor(volume / 100);
+
+ unit = Math.floor(reprocess / size[type]);
+
+ for(i = 0; i <8; i++){
+  results[i] = reprocess * factor * mainYield[type][i];
+  document.getElementById("output0"+i).innerHTML = results[i];
+ }
+}
+
+function initMineral(){
+ type = Number(document.getElementById("type02").value);
+ volume = Number(document.getElementById("field02").value);
+
+ unit = Math.floor(volume / factor * 100);
+
+ for(i = 0; i < 8; i++){
+  if(mainYield[i][type]==0){
+   results[i]=0;
+  }else{
+   results[i] = volume / mainYield[i][type];
+  }
+  results[i] *= 100;
+  results[i] /= factor;
+  document.getElementById("output1"+i).innerHTML = Math.floor(results[i]);
+ }
+}
+
+</script>
+</head>
+<body>
+
+<form>
+Asteroid Type
+<select id="type01">
+ <option value = "0">Veldspar</option>
+ <option value = "1">Scordite</option>
+ <option value = "2">Pyroxers</option>
+ <option value = "3">Omber</option>
+ <option value = "4">Kernite</option>
+ <option value = "5">Geniss</option>
+ <option value = "6">Arkonor</option>
+ <option value = "7">Bistot</option>
+</select>
+<br>
+Ore Quantity
+<input type="text" id="field01">
+<br>
+<input type = "button" onClick="initAsteroid()" value = "Calcualte">
+<br>
+<table><tr>
+<td>Tritanium</td>
+<td>Pyerite</td>
+<td>Mexallon</td>
+<td>Isogen</td>
+<td>Nocxium</td>
+<td>Zydrine</td>
+<td>Megacyte</td>
+<td>Morphite</td>
+</tr><tr>
+<td><p id="output00">0</p></td>
+<td><p id="output01">0</p></td>
+<td><p id="output02">0</p></td>
+<td><p id="output03">0</p></td>
+<td><p id="output04">0</p></td>
+<td><p id="output05">0</p></td>
+<td><p id="output06">0</p></td>
+<td><p id="output07">0</p></td>
+</tr></table></form>
+
+<form>
+Mineral Type
+<select id="type02">
+ <option value = "0">Tritanium</option>
+ <option value = "1">Pyerite</option>
+ <option value = "2">Mexallon</option>
+ <option value = "3">Isogen</option>
+ <option value = "4">Nocxium</option>
+ <option value = "5">Zydrine</option>
+ <option value = "6">Megacyte</option>
+ <option value = "7">Morphite</option>
+</select><br>
+Mineral Quantity
+<input type="text" id="field02"><br>
+<input type = "button" onClick="initMineral()" value = "Calcualte"><br>
+
+<table><tr>
+<td>Veldspar</td>
+<td>Scordite</td>
+<td>Pyroxers</td>
+<td>Omber</td>
+<td>Kernite</td>
+<td>Geniss</td>
+<td>Arkonor</td>
+<td>Bistot</td>
+</tr><tr>
+<td><p id="output10">0</p></td>
+<td><p id="output11">0</p></td>
+<td><p id="output12">0</p></td>
+<td><p id="output13">0</p></td>
+<td><p id="output14">0</p></td>
+<td><p id="output15">0</p></td>
+<td><p id="output16">0</p></td>
+<td><p id="output17">0</p></td>
+</tr></table></form>
+</body>
+</html>
