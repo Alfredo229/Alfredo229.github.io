@@ -32,9 +32,9 @@ function initAsteroid(){
  type = Number(document.getElementById("type01").value);
  volume = Number(document.getElementById("field01").value);
 
- reprocess = Math.floor(volume / 100);
+ unit = Math.floor(volume / size[type]);
 
- unit = Math.floor(reprocess / size[type]);
+ reprocess = Math.floor(unit / 100);
 
  for(i = 0; i <8; i++){
   results[i] = reprocess * factor * mainYield[type][i];
@@ -56,6 +56,8 @@ function initMineral(){
   }
   results[i] *= 100;
   results[i] /= factor;
+  results[i] *= size[i];
+
   document.getElementById("output1"+i).innerHTML = Math.floor(results[i]);
  }
 }
@@ -77,7 +79,7 @@ Asteroid Type
  <option value = "7">Bistot</option>
 </select>
 <br>
-Ore Quantity
+Ore Volume
 <input type="text" id="field01">
 <br>
 <input type = "button" onClick="initAsteroid()" value = "Calcualte">
@@ -117,7 +119,7 @@ Mineral Type
 Mineral Quantity
 <input type="text" id="field02"><br>
 <input type = "button" onClick="initMineral()" value = "Calcualte"><br>
-
+m3<br>
 <table><tr>
 <td>Veldspar</td>
 <td>Scordite</td>
