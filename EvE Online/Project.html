@@ -29,6 +29,7 @@ factor = 0.5;
 results = new Array(8);
 
 function initAsteroid(){
+ factor = Number(document.getElementById("ratio01").value) / 100;
  type = Number(document.getElementById("type01").value);
  volume = Number(document.getElementById("field01").value);
 
@@ -43,6 +44,7 @@ function initAsteroid(){
 }
 
 function initMineral(){
+ factor = Number(document.getElementById("ratio01").value) / 100;
  type = Number(document.getElementById("type02").value);
  volume = Number(document.getElementById("field02").value);
 
@@ -67,6 +69,8 @@ function initMineral(){
 <body>
 
 <form>
+Refinery Rate %
+<input type="text" id="ratio01" value="50"><br><br>
 Asteroid Type
 <select id="type01">
  <option value = "0">Veldspar</option>
@@ -83,7 +87,7 @@ Ore Volume
 <input type="text" id="field01">
 <br>
 <input type = "button" onClick="initAsteroid()" value = "Calcualte">
-<br>
+<br><br>
 <table><tr>
 <td>Tritanium</td>
 <td>Pyerite</td>
@@ -118,7 +122,7 @@ Mineral Type
 </select><br>
 Mineral Quantity
 <input type="text" id="field02"><br>
-<input type = "button" onClick="initMineral()" value = "Calcualte"><br>
+<input type = "button" onClick="initMineral()" value = "Calcualte"><br><br>
 m3<br>
 <table><tr>
 <td>Veldspar</td>
