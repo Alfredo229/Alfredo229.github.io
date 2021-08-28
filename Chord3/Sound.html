@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Chord generator</title>
+<script>
+
+ID = 0;
+pick = 0;
+myString ="";
+mySoundLoad = new Array(8);
+fileNames = new Array (0,1,3,4,9,10,12,13);
+currentSound = new Audio();
+myDuration=666;
+
+function init(){
+ for(i=0;i<8;i++){
+  mySoundLoad[i] = new Audio();
+  mySoundLoad[i].src = fileNames[i] + '.mp3';
+  mySoundLoad[i].load();
+  mySoundLoad[i].duration=myDuration;
+  mySoundLoad[i].volume=0.5;
+//  mySoundLoad[i].preload = "auto";
+ }
+// currentSound.src = mySoundLoad[0].src;
+// pick = 0;
+// document.getElementById("MySound").preload = "auto";
+// document.getElementById("MySound").autoplay = true;
+// alert(document.getElementById("MySound").
+}
+
+function Start()
+{
+ ID = setTimeout("Start()",myDuration);
+ mySoundLoad[pick].pause();
+// mySoundLoad[pick].pause();
+// document.getElementById("MySound").play();
+// document.getElementById("MySound").pause();
+// document.getElementById("MySound").src = currentSound.src;
+// document.getElementById("MySound").src = currentSound.src;
+
+ myValue = 0;
+ pickA = Math.random() * 2;
+ pickA = Math.floor(pickA);
+ if(pickA == 1)
+  myValue += 1;
+ pickB = Math.random() * 2;
+ pickB = Math.floor(pickA);
+ if(pickB == 1)
+  myValue += 2;
+ pickC = Math.random() * 2;
+ pickC = Math.floor(pickC);
+ if(pickC == 1)
+  myValue += 4;
+
+ mySoundLoad[myValue].play();
+
+// myString = pick + '.mp3';
+// currentSound.src = mySoundLoad[pick].src;
+// currentSound.load();
+// document.getElementById("MySound").src = mySoundLoad[pick].src;
+// document.getElementById("MySound").load();
+}
+
+function Stop(){
+ clearTimeout(ID);
+}
+
+</script>
+<body onLoad = "init()">
+<div style="width:66%;margin:auto;text-align:center">
+<h2>This page will pull a number  0 to 15 and play the binary components in a relativity context</h1>
+<form id="MyForm">
+<input type="button" value="Start" onClick="Start()"></input>
+<input type="button" value="Stop" onClick="Stop()"></input>
+<br>
+</form>
+</div>
+</body>
+</html>
